@@ -54,25 +54,6 @@ H2 console is available at `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2
 | `DELETE` | `/api/employees/{id}` | Removes employee and cascading address only (projects remain).
 | `GET` | `/api/employees/{id}/projects` | Pageable list of projects assigned to the employee.
 
-**Sample Request**
-
-```json
-{
-  "firstName": "Test",
-  "lastName": "User",
-  "email": "test.user@example.com",
-  "jobTitle": "QA Engineer",
-  "companyId": 1,
-  "projectIds": [1, 2],
-  "address": {
-    "street": "1 Infinite Loop",
-    "city": "Austin",
-    "state": "TX",
-    "postalCode": "73301",
-    "country": "USA"
-  }
-}
-```
 
 ### Projects
 
@@ -88,25 +69,6 @@ H2 console is available at `http://localhost:8080/h2-console` (JDBC URL `jdbc:h2
 | `GET` | `/api/companies/search?name=Acme Holding Group` | Returns company info + projects + employees per project via a single parent query.
 | `DELETE` | `/api/companies/{id}` | Cascades removal to projects, employees, and addresses in one request.
 
-**Company Response Structure**
-
-```json
-{
-  "id": 1,
-  "name": "Acme Holding Group",
-  "description": "Sample company with multiple delivery streams",
-  "projects": [
-    {
-      "id": 1,
-      "name": "Phoenix",
-      "employees": [
-        { "id": 1, "firstName": "Liam", "lastName": "Bennett", "jobTitle": "Engineering Lead", "email": "liam.bennett@example.com" }
-        // ...more employees
-      ]
-    }
-  ]
-}
-```
 
 ## Pagination & Sorting
 
