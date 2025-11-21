@@ -1,0 +1,13 @@
+GET http://localhost:8080/api/projects/1/employees?page=0&size=5
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/companies/search?name=Acme Holding Group
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/employees/1
+Accept: application/json
+
